@@ -30,6 +30,13 @@ public struct ASACreateThreadRequest: Codable {
             case fileIds = "file_ids"
             case metadata
         }
+        
+        public init(role: String, content: String, fileIds: [String]? = nil, metadata: [String : String]? = nil) {
+            self.role = role
+            self.content = content
+            self.fileIds = fileIds
+            self.metadata = metadata
+        }
     }
 
     public init(messages: [Message]? = nil) {
